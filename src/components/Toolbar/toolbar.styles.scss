@@ -1,0 +1,47 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0 2px 3px 0 #00000040;
+  background-color: #fff;
+
+  .toolbar-logo-container {
+    display: flex;
+    align-items: center;
+    .toolbar-logo {
+      height: 42px;
+    }
+
+    .toolbar-title {
+      font-size: 36px;
+      color: #3463ae;
+      font-weight: bold;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .toolbar-wallet-container {
+    .metamask-connect {
+      background: #f6851a;
+      text-decoration: none;
+      box-shadow: 0 0 4px 1px #f6841a3f;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 4px;
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid transparent;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+          background: darken($color: #f6851a, $amount: 20)
+      }
+    }
+  }
+}
