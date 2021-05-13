@@ -27,14 +27,23 @@
         width: 70%;
 
         a {
-            text-decoration: none;
-            color: #3463ae;
-            &:hover {
-                text-decoration: underline;
-            }
+          text-decoration: none;
+          color: #3463ae;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
+  }
+
+  .owner-not-found {
+    width: 100%;
+    height: calc(100vh - 228px);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .vesting-detail-table {
@@ -54,16 +63,16 @@
     }
 
     tbody {
-    //   tr:nth-child(1) {
-    //     background-color: #f2f2f2;
-    //   }
+      //   tr:nth-child(1) {
+      //     background-color: #f2f2f2;
+      //   }
       tr {
-          height: 48px;
-          &:nth-child(even) {
-            background-color: #fff;
-          }
+        height: 48px;
+        &:nth-child(even) {
+          background-color: #fff;
+        }
       }
-      
+
       td {
         text-align: end;
         border: 1px solid #ddd;
