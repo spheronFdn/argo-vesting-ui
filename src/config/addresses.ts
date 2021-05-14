@@ -1,6 +1,6 @@
 const addresses = {
-    argoERC20: "0xc1C0472c0C80bCcDC7F5D01A376Bd97a734B8815",
-    argoVestingFactory: "0x5fe29891e8187f1375a4C3f3fd84383BD8c43501"
+    argoERC20: "0x28cca76f6e8ec81e4550ecd761f899110b060e97",
+    argoVestingFactory: "0x2C11c8A708caea4512A3aD365800F20A0952dc0f"
 };
 
 export default addresses;
