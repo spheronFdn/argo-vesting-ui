@@ -11,6 +11,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "bignumber.js": "^9.0.1",
+    "bnc-notify": "^1.6.0",
     "bnc-onboard": "^1.25.0",
     "moment": "^2.29.1",
     "node-sass": "^5.0.0",

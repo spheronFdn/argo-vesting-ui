@@ -45,7 +45,7 @@ export default function VestingInfo({ wallet }: any) {
       const totalTokens = await getTotalTokens(id);
       setTotalTokens(totalTokens);
       const list = await getVestingDetailsArray(id);
-      setVestingInfoList(list);
+      setVestingInfoList(list.sort((a, b) => +a.releaseTime - +b.releaseTime));
       setDetailsLoading(false);
     } else {
       setIsOwner(false);

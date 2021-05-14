@@ -2,6 +2,12 @@ import Web3 from "web3";
 import Onboard from "bnc-onboard";
 import { addresses, abis } from "../config";
 import BigNumber from "bignumber.js";
+import Notify from "bnc-notify";
+
+var notify = Notify({
+  dappId: "052b3fe9-87d5-4614-b2e9-6dd81115979a", // [String] The API key created by step one above
+  networkId: 5, // [Integer] The Ethereum network ID your Dapp uses.
+});
 
 let web3: any;
 
@@ -66,7 +72,11 @@ export const startVesting = async () => {
   const vestingFactoryContract = await contractVestingFactory();
   const vestTx = await vestingFactoryContract.methods
     .createVesting()
-    .send({ from: web3.currentProvider.selectedAddress });
+    .send({ from: web3.currentProvider.selectedAddress })
+    .on("transactionHash", function (hash: string) {
+      console.log(hash);
+      notify.hash(hash);
+    });
   return vestTx;
 };
 
@@ -116,7 +126,11 @@ export const unlockTokens = async (address: string) => {
   if (vesting) {
     const release = await vesting.methods
       .release()
-      .send({ from: web3.currentProvider.selectedAddress });
+      .send({ from: web3.currentProvider.selectedAddress })
+      .on("transactionHash", function (hash: string) {
+        console.log(hash);
+        notify.hash(hash);
+      });
     console.log(release);
     return release;
   } else {
