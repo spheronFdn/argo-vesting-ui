@@ -13,8 +13,8 @@ import BounceLoader from "react-spinners/BounceLoader";
 import { css } from "@emotion/core";
 
 const override = css`
-    display: block;
-    margin: 0px 0.5rem;
+  display: block;
+  margin: 0px 0.5rem;
 `;
 
 export default function VestingInfo({ wallet }: any) {
@@ -56,7 +56,7 @@ export default function VestingInfo({ wallet }: any) {
   const claimToken = async (i: number) => {
     setClaimLoading(i);
     try {
-      const claimTx = await unlockTokens(id);
+      const claimTx = await unlockTokens(id, wallet);
       console.log(claimTx);
       setClaimLoading(-1);
       setDetailsLoading(true);

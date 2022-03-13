@@ -68,11 +68,11 @@ export const getWhitelistDetails = async (address: string) => {
   return whitelistDetails;
 };
 
-export const startVesting = async () => {
+export const startVesting = async (wallet: string) => {
   const vestingFactoryContract = await contractVestingFactory();
   const vestTx = await vestingFactoryContract.methods
     .createVesting()
-    .send({ from: web3.currentProvider.selectedAddress })
+    .send({ from: wallet })
     .on("transactionHash", function (hash: string) {
       console.log(hash);
       notify.hash(hash);
@@ -121,12 +121,12 @@ export const getBeneficiary = async (address: string) => {
   }
 };
 
-export const unlockTokens = async (address: string) => {
+export const unlockTokens = async (address: string, wallet: string) => {
   var vesting = await getVestingContract(address);
   if (vesting) {
     const release = await vesting.methods
       .release()
-      .send({ from: web3.currentProvider.selectedAddress })
+      .send({ from: wallet })
       .on("transactionHash", function (hash: string) {
         console.log(hash);
         notify.hash(hash);

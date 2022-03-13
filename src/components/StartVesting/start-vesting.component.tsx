@@ -7,8 +7,8 @@ import BounceLoader from "react-spinners/BounceLoader";
 import { css } from "@emotion/core";
 
 const override = css`
-    display: block;
-    margin: 0px 0.5rem;
+  display: block;
+  margin: 0px 0.5rem;
 `;
 
 export default function StartVesting({ wallet }: any) {
@@ -51,9 +51,9 @@ export default function StartVesting({ wallet }: any) {
 
   const createVesting = async () => {
     setVestingLoading(true);
-    const vestTx = await startVesting();
+    const vestTx = await startVesting(wallet);
     setVestingLoading(false);
-    startup()
+    startup();
   };
 
   return (
